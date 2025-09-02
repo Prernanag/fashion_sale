@@ -1,0 +1,12 @@
+import pandas as pd
+df = pd.read_csv('/content/Fashion_Retail_Sales.csv')
+print(df.head())
+print(df.shape())
+print(df.info())
+print(df.describe())
+print("Total Customer:", df["Customer Reference ID"].count())
+print(df) # to display all the rows and columns, entire table
+print(df.isnull().sum()) # to check how many missing values are there in the dataset
+df.dropna(axis=0, inplace=True)
+print(df) # to handle missing values
+df.to_csv("fashion_retail_sales_cleaned_data.csv", index=False) #cleaned dataset
